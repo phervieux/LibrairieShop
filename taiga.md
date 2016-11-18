@@ -4,6 +4,8 @@
 * Faire des logs!!! - bonus???
 * Gestion des articles et commentaires en Mysql
 
+/!\ Chaque UserStory possède 3 tâches en général (model, view, controller), à chaque assigné de l'userstory de créer les tâches!!!
+
 # User Stories
 * [FE] Moi: visiteur, veux: ajouter des articles dans le panier
 * [FE] Moi: visiteur, veux: visualiser le panier
