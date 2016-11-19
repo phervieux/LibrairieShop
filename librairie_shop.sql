@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `book` (
-  `id` int(8) NOT NULL,
+  `id` int(8) PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
   `overview` text NOT NULL,
   `author` varchar(50) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE `book` (
 --
 
 CREATE TABLE `genre` (
-  `id` int(8) NOT NULL,
+  `id` int(8) PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -58,7 +58,7 @@ CREATE TABLE `genre` (
 --
 
 CREATE TABLE `order` (
-  `id` int(50) NOT NULL,
+  `id` int(50) PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
   `order_date` date NOT NULL,
   `book` int(50) NOT NULL,
   `user` int(50) NOT NULL,
@@ -67,47 +67,6 @@ CREATE TABLE `order` (
   `total_price` int(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Index pour les tables exportées
---
-
---
--- Index pour la table `book`
---
-ALTER TABLE `book`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `genre`
---
-ALTER TABLE `genre`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `order`
---
-ALTER TABLE `order`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
---
-
---
--- AUTO_INCREMENT pour la table `book`
---
-ALTER TABLE `book`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `genre`
---
-ALTER TABLE `genre`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `order`
---
-ALTER TABLE `order`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
