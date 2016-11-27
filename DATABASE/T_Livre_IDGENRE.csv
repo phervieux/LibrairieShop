@@ -1,0 +1,305 @@
+id_Livre;Titre;Type_Ouvrage
+1;Une brève histoire du temps;1
+2;Navigation d'Ulysse;1
+3;Feu Mathias Pascal;1
+4;Fumée rouge;1
+6;Voyage au bout de la nuit;1
+7;Le guide Marabout du Judo;2
+8;Métapsychologie;1
+9;Se;2
+10;Tolérance zéro;1
+11;Le meilleur des mondes;1
+12;Bel-Ami;1
+13;Les oreilles rouges;1
+14;La chute;1
+15;Français-Allemand;2
+16;Alex;1
+17;The joy luck club;1
+18;Le cœur conscient;1
+19;La part du vent;1
+20;Jonathan Livingston Seagull;1
+21;Educating Rita;1
+22;Lies of silence;1
+23;Nuits d'enfer;1
+24;Enemies;1
+25;Maria, fille de Flandre;1
+26;Aphrodite;1
+27;Le pot au noir;1
+28;Le grand Meaulnes;1
+29;Corps et âmes;1
+30;La Bible;1
+31;La crevasse des maquisards;1
+32;Tristan et Iseult;1
+33;Le gambit des étoiles;1
+34;Stamps & stories;2
+35;Skinwalkers;1
+36;The Christmas books;1
+37;A Christmas Carol;1
+38;La dixième prophétie;1
+39;L'homme qui rétrécit;1
+40;Histoires extraordinaires;1
+41;Nouvelles histoires extraordinaires;1
+42;La pureté dangereuse;1
+43;Zazie dans le métro;1
+44;La visite de la vieille dame;1
+45;Le Colonel Chabert;1
+46;Phèdre;1
+47;En attendant Godot;1
+48;Poena Damni;1
+49;Le prophète;1
+50;Croix du sud;1
+51;Les travaux d'Hercule;1
+52;Histoires grotesques et sérieuses;1
+53;La main froide;1
+54;training cerveau;2
+55;La condition humaine;1
+56;Misery;1
+57;Shining;1
+58;Le parfum;1
+59;Phèdre;1
+60;Les fleurs du mal;1
+61;L'écume des jours;1
+62;Of mice and men;1
+63;Rhinocéros;1
+64;Mémoires d'Hadrien;1
+65;Les Confessions;1
+66;Boule de Suif;1
+67;Plain Tales from the Hills;1
+68;Le livre d'or de la poésie française;1
+69;Tristan et Iseult;1
+70;Oliver Twist;1
+71;Le théorème du perroquet;1
+72;Français-Anglais;2
+73;Pocket Guide to PASCAL;2
+74;Chroniques martiennes;1
+75;L'amour fou;1
+76;Trois hommes à abattre;1
+77;Justine ou Les malheurs de la vertu;1
+78;Poésies;1
+79;Objectif: Apocalypse;1
+80;Les liaisons dangereuses;1
+81;Pensées;1
+82;Fahrenheit 451;1
+83;Les petits enfants du siècle;1
+84;Le diable et le bon dieu;1
+85;Eugénie Grandet;1
+86;Bel-Ami;1
+87;La bête humaine;1
+88;Diderot & D'Alembert;2
+89;Le dictionnaire des synonymes et des contraires;2
+90;Atlas compact universel;2
+91;Atlas encyclopédique mondial;1
+92;Le petit Larousse illustré 2012;2
+93;Le Robert méthodique;2
+94;Le petit Robert micro;2
+95;Arbres et arbustes;2
+96;Oxymore mon amour!;2
+97;Les 50 plus grandes théories en psychologie;2
+98;Les 50 plus grandes théories économiques;2
+99;Les 50 plus grands aspects de l'anatomie du corps humain;2
+100;Les 50 plus grandes téories scientifiques;2
+101;Les 50 légendes les plus célébres de la mythologie;2
+102;Les grandes théories de Hawking;2
+103;Les grandes théories d'Einstein;2
+104;Les 50 plus grandes théories mathématiques;2
+105;Les 50 plus grandes théories philosophiques;2
+106;Bricoler facile;2
+107;Vous n'en croirez pas vos yeux;2
+108;A hurler de rire;1
+109;Cours de conduite sportive de la moto;2
+110;L'Officiel du Scrabble;2
+111;Elementary Linear Algebra;2
+112;Mécanique quantique;2
+113;Mécanique quantique;2
+114;Programmation en Assembleur;2
+115;Mathématiques pour informaticiens;2
+116;Mécanique générale;2
+117;Introduction à l'analyse numérique;2
+118;L'empire du temps;1
+119;Cours d'algèbre;2
+120;Cours d'Analyse;2
+121;Cours d'Analyse;2
+122;Cours d'Analyse;2
+123;Cristallographie;2
+124;Physique statistique;2
+125;Physique des solides;2
+126;Heat and Mass Transfer;2
+127;J'ai recommencé à fumer;2
+128;La théorie de la relativité restreinte et générale;1
+129;Bien commencer ses études scientifiques;2
+130;Géographie 5e;2
+131;Le langage C;2
+132;Introduction à la chimie pour ingénieurs;2
+133;Science & Vie oct 97;2
+134;Science & Vie jan 2003;2
+135;Analyse numérique;2
+136;Variables complexes;2
+137;Compléments d'analyse;2
+138;Dislocations et plasticité des cristaux;2
+139;Analyse;2
+140;Géométrie vectorielle et analytique plane;2
+141;Cours de Géométrie;2
+142;Programmer en PASCAL;2
+143;Code des obligations;2
+144;Code civil suisse;2
+145;Les enfants du soleil;1
+146;Manuel de droit;2
+147;Annales CESSOUEST 89-91;2
+148;Recueil de problèmes de physique de niveau bac ou maturité;2
+149;La chirurgie valvulaire;2
+150;Les mathématiques;2
+151;Nouveau cours de chimie;2
+152;Personnalisez vos montages Arduino;2
+153;Arduino Maîtrisez sa programmation et ses cartes d'interface;2
+155;Arduino Les bases de la programmation;2
+156;Guide d'installation Red Hat Enterprise Linux;2
+157;HP 48 Manuel d'utilisation;2
+158;Mathematica 3 par la pratique;2
+159;150 proverbes et expressions expliqués;2
+160;Neuf recettes rapides de riz;2
+161;La cuisine des gens pressés;2
+162;La cuisine des maris;2
+163;La cuisine des gourmandes;2
+164;La cuisine des enfants;2
+165;La cuisine des amants;2
+166;Montclar;1
+167;Les esprits de la Terre;1
+168;Créer des applications avec Qt 5;2
+169;Rédiger des documents de qualité avec LATEX;2
+170;Petite encyclopédie pour jouer avec les mots;2
+171;Sous haute protection;1
+173;La part de l'aube;1
+174;Narcisse;1
+175;La famille du Vourdalak;1
+176;Intruder in the dust;1
+177;C'est arrivé un jour;1
+178;C'est arrivé un jour;1
+179;Mangez malin;2
+180;Zumstein Catalogue suisse;2
+181;La nuit d'Ostende;1
+182;Pressentiments;1
+183;Disparue dans la nuit;1
+184;André Rey, psychologue scientifique;1
+185;Histoires du Livre de Mormon;2
+186;Ancien Testament Guide d'étude du membre de la classe;2
+187;Enseignements des présidents de l'Eglise;2
+188;Keskidi;1
+189;Les sabots de Frise-Moustache;1
+190;Anglais-Français Harrap's compact;2
+191;Linux Toutes Distributions;2
+192;Le langage C;2
+193;La Bible Linux;2
+194;Comme un chant d'espérance;1
+195;Video deluxe plus;2
+196;PartitionMagic;2
+197;PASCAL mode d'emploi;2
+198;Physique 4 optique ondes;2
+199;English for Information Technology;2
+200;formules;2
+201;Algèbre;2
+202;Serveurs;2
+203;Gnu/ Linux pratique Inkscape;2
+205;GNU/ Linux Python avancé;2
+206;Programmez! Développez sur Linux;2
+207;Programmez! La boîte à outil du développeur;2
+208;Programmez! Choisir son langage de programmation;2
+209;GNU/ Linux Je programme!;2
+210;Excel 2010 Notions de base;2
+211;Word 2010 Notions de base;2
+212;Le MEM;2
+213;Enseignement de culture générale 2éme année;2
+214;SuSE Linux 6.1;2
+215;SuSE Linux professional 9.1 User Guide;2
+216;SuSE Linux professional 9.1 Installation Guide;2
+217;Enseignement des présidents de l'Eglise;1
+218;A structured english grammar course;2
+219;Word Perfect vocabulary for fluency;2
+220;Wordbuilder;2
+221;L'enseignement pas de plus grand appel;2
+222;O.K. Corral;1
+223;Sugar décembre 02;2
+224;Kingpin oct/nov 2003;2
+225;Thrasher June 2004;2
+226;Uno Skateboard julio 2002;2
+227;Europe on a shoestring;2
+228;Transworld Skateboarding december 2001;2
+229;Kingpin dec/jan 2003;2
+230;Transworld Skateboarding november 2001;2
+231;Transworld Skateboarding march 2004;2
+232;3Sesenta Especial 15 años solo surf;2
+233;San Fransisco circus;1
+234;Voyage au centre de la Terre;1
+235;Model Kits 91;1
+236;Des barbelés sur la prairie;1
+237;4Riders winter 04;2
+238;Onboard mars 2004;2
+239;Burton catalog 2006;2
+240;Thrasher april 2005;2
+241;Connaissance du monde contemporain BEP2;2
+242;Formulaires et Tables;2
+243;BASS Spécial 5 Cordes;2
+244;Hackers magazine;2
+245;LOGIN SuSE Linux 9.2;2
+246;PC UPDATE SOS dépannage jan/fév 2013;2
+247;WINDOWS news Windows sans stress nov/déc 2003;2
+248;Linux Magazine France nov 2001;2
+249;GNU/Linux Pratique jan/fév 2006;2
+250;Planète Linux openSUSE 11.0 juil/aou 08;2
+251;Linux Loader dossier spécial oct/nov 2001;2
+252;Linux+ nov/déc 2000;2
+253;PC Utilities nov/déc 2003;2
+254;Best of Web sept/oct 2000;2
+255;PC MAX avril 2000;2
+256;Internet Pratique hiver 2003;2
+257;XP Solutions aou/sep 2004;2
+258;Pêche Mouche sept/oct 2004;2
+259;Mel Bay's complete book of bass technique;2
+260;BASS  Spécial Bass Métal;2
+261;Brochure d'accueil sept 2001;2
+262;BASS Spécial Cordes;2
+263;Guitar & Bass mars 95;2
+264;Méthode de basse pour débutant;2
+265;Pizzicato Funk for electric and acoustic bass;2
+266;Rock&Folk mai 1996;2
+267;SELECT stuff about music aug 1991;2
+268;Rock, Slap & Funk Bass;2
+269;BASS player aug 1995;2
+270;BEST of CURE Hors Série;2
+271;BASS  magazine juil/aou 1997;2
+272;Guitar & Bass juin 95;2
+273;BASS Spécial Groove;2
+274;Computer music oct 2000;2
+275;Ragga janvier 2003;2
+276;RAGGA février 2003;2
+277;RAGGA septembre 2001;2
+278;RAGGA novembre 2000;2
+279;RAGGA octobre 2000;2
+280;RAGGA;2
+281;RAGGA hors série Groove;2
+282;RAGGA novembre 2001;2
+283;RAGGA décembre 2002;2
+284;Iconographie;2
+285;Biophysique;2
+286;Cours de Physique générale Electrodynamique;2
+287;Cours de Physique générale Electrodynamique (suite);2
+288;Métrologie;2
+289;Introduction à l'électronique pour ingénieurs physiciens;2
+290;Analyse numérique Notes de cours;2
+291;Abacule;2
+292;Abacule;2
+293;Abacule;2
+294;Abacule;2
+295;PlayStation Magazine juin 2000;2
+296;Polyrama 2004;2
+297;Science & Vie Junior Le monde étrange des particules;2
+298;COMSOL news 2004;2
+299;Femlab 3 Multiphysics Modeling;2
+300;Generation 4 novembre 98;2
+301;Introduction à l a Physique Nucléaire et Corpusculaire;2
+302;Résumé du cours de Droit;2
+303;Formage des métaux;2
+304;Pour la Science juillet 1998;2
+305;Pour la Science mai 1996;2
+306;La Recherche spécial juil/aou 1995;2
+307;Time december 1999;2
+308;La Recherche décembre 1999;2
