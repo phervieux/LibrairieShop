@@ -1,4 +1,4 @@
-# Base de données    projet151
+# Database           projet151
 # Username           projet151
 # Password           projet151
 USE projet151;
@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS t_book;
 DROP TABLE IF EXISTS t_genre;
 
 
-# Structure de la table t_genre
+# Structure of the table t_genre
 CREATE TABLE t_genre (
   id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   name VARCHAR(50) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE t_genre (
   deleted INT(1) NOT NULL DEFAULT 0 COMMENT '0=visible / 1=invisible'
 ) ENGINE=InnoDB;
 
-# Structure de la table t_book
+# Structure of the table t_book
 CREATE TABLE t_book (
   id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   title VARCHAR(150) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE t_book (
   FOREIGN KEY (FK_genre) REFERENCES t_genre(id)
 ) ENGINE=InnoDB;
 
-# Structure de la table t_order
+# Structure of the table t_order
 CREATE TABLE t_order (
   id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   order_date DATETIME NOT NULL DEFAULT NOW() COMMENT 'INSERT datetime',

@@ -1,9 +1,9 @@
-# Base de données    projet151
+# Database           projet151
 # Username           projet151
 # Password           projet151
 USE projet151;
 
-# Données de la table t_genre
+# Data of table t_genre
 INSERT INTO t_genre (name) VALUES 
 ('Dictionnaire'),
 ('Magazine'),
