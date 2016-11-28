@@ -1,13 +1,11 @@
 # Database           projet151
 # Username           projet151
 # Password           projet151
+
+# Drop DATBASE and his schema before to reconstruct it
+DROP DATABASE projet151;
+CREATE DATABASE projet151;
 USE projet151;
-
-# Supprimer tables avant de recréer
-DROP TABLE IF EXISTS t_order;
-DROP TABLE IF EXISTS t_book;
-DROP TABLE IF EXISTS t_genre;
-
 
 # Structure of the table t_genre
 CREATE TABLE t_genre (
