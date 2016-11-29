@@ -2,7 +2,7 @@
 Le cahier des charges se trouve dans le ficher cahier_charges.pdf.
 
 # Version
-Nous devons utiliser PHP-5.6. Un paquet existe dans Debian et il faut utiliser le programme downgrade dans les distributions similaires à Arch Linux.
+Nous devons utiliser PHP-5.5. Un paquet existe dans Debian et il faut utiliser le programme downgrade dans les distributions similaires à Arch Linux.
 La version du serveur MySQL doit être la 5.6.
 
 # Database
