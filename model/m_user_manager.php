@@ -10,12 +10,12 @@ class UserManager {
     //Construction
 	public function __construct() {
 		global $odbc;
-		$this -> setOdbc($odbc);
+		$this -> setodbc($odbc);
 	}
 
     //INSERT DB FUNCTION
 	public function insert(User $user) {
-            $q = $this -> _db -> prepare('INSERT INTO user(id, username, name, surname, email, right, deleted, password)
+            $q = $this -> _odbc -> prepare('INSERT INTO user(id, username, name, surname, email, right, deleted, password)
                 VALUES(:id, :username, :name, :surname, :email, :right, :deleted, :password)');
             $q -> bindValue(':id', $user -> getid());
             $q -> bindValue(':username', $user -> getusername());
@@ -26,7 +26,7 @@ class UserManager {
             $q -> bindValue(':deleted', $user -> getdeleted());
             if ($q -> execute()) {
                     //execution successfull: return last inserted id
-                    $return = $this -> _db -> lastInsertId();
+                    $return = $this -> _odbc -> lastInsertId();
             } else {
                     //execution failed: return FALSE
                     $return = FALSE;
@@ -35,11 +35,11 @@ class UserManager {
 	}
 
     //SELECT DB FUNCTION
-	public function select(User $user) {
+	public function select($username, $password) {
 		$output = array();
-		$q = $this -> _db -> prepare("SELECT * FROM user WHERE username = :username AND password = :password AND deleted != 1");
-		$q -> bindValue(':username', $user -> getusername());
-                $q -> bindValue(':password', $user -> getpassword());
+		$q = $this -> _odbc -> prepare("SELECT * FROM user WHERE username = :username AND password = :password AND deleted != 1");
+		$q -> bindValue(':username', $username);
+                $q -> bindValue(':password', $password);
                 $result = $q -> fetch(PDO::FETCH_ASSOC);
 		if ($q -> execute()) {
 			//execution successfull: return DB data
@@ -56,7 +56,7 @@ class UserManager {
     //SOFT DELETE ELEMENT FUNCTION
     public function soft_delete(User $user) {
 		//update table deleted attr.
-		$q = $this -> _db -> prepare('UPDATE user SET deleted=1 WHERE id=:id)');
+		$q = $this -> _odbc -> prepare('UPDATE user SET deleted=1 WHERE id=:id)');
 		$q -> bindValue(':id', $user -> getid());
         if ($q -> execute()) {
             //execution successfull: return TRUE
@@ -69,8 +69,8 @@ class UserManager {
 	}
 
     //setDB
-	public function setOdbc(PDO $odbc) {
-		$this -> _db = $odbc;
+	public function setodbc(PDO $odbc) {
+		$this -> _odbc = $odbc;
 	}
 }
 
