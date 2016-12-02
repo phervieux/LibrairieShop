@@ -86,3 +86,4 @@ INSERT INTO t_book (title, overview, author_sex, author_name, author_fname, year
 ('La visite de la vieille dame','overview', 'M', 'David', 'Miranda', 2014, 25.50, 'dsdasdsadasd', 'edition', 15 ,1),
 ('Le Colonel Chabert','overview', 'M', 'David', 'Miranda', 2014, 25.50, 'dsdasdsadasd', 'edition', 15 ,1),
 ('Phèdre','overview', 'M', 'David', 'Miranda', 2014, 25.50, 'dsdasdsadasd', 'edition', 15 ,1);
+UPDATE t_book SET price = FLOOR(RAND()*200)*0.5 + 1;
