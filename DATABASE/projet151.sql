@@ -3,7 +3,7 @@
 # Password           projet151
 USE projet151;
 
-# Supprimer tables avant de recréer
+# Deleting before creating
 DROP TABLE IF EXISTS t_order;
 DROP TABLE IF EXISTS t_book;
 DROP TABLE IF EXISTS t_genre;
