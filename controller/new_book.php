@@ -19,11 +19,16 @@
 	
 	////////////////////////////////// ----- Déclarations ----- //////////////////////////////////
 
-	// Include file containing class Book
-	include '../model/m_book.php';
-	
+	/*
 	//test ouput:
 	echo "Titre (direct from post):   ".$_POST['title']."<br/>";
+	 */
+	
+	// Include file containing class Book
+	$path = $_SERVER['DOCUMENT_ROOT']."/model/m_book.php";
+	
+	require_once "$path";
+
 	// The constructor of the Book class needs an array with the datas:
 	// We can give it the $_POST array directly:
 	$values = array(
@@ -44,8 +49,22 @@
 					"deleted" => 0,);
 	$mybook = new Book(/*$_POST[]*/$values);
 	
-	// Test:
-	echo "Titre  (de mybook.get...):   ".$mybook->gettitle()."<br/>";
-	echo "ID  (de mybook.get...):   ".$mybook->getid()."<br/>";
+	// Checks values before recording them in database:
+	echo "Titre :   ".$mybook->gettitle()."<br/>";
+	echo "id  :   ".$mybook->getid()."<br/>";
+	echo "overview  (de mybook.get...):   ".$mybook->getoverview()."<br/>";
+	echo "author_sex:   ".$mybook->getauthor_sex()."<br/>";
+	echo "author_name:   ".$mybook->getauthor_name()."<br/>";
+	echo "author_fname:   ".$mybook->getauthor_fname()."<br/>";
+	echo "year:   ".$mybook->getyear()."<br/>";
+	echo "price:   ".$mybook->getprice()."<br/>";
+	echo "img_cover:   ".$mybook->getimg_cover()."<br/>";
+	echo "edition:   ".$mybook->getedition()."<br/>";
+	echo "logistic_qnt:   ".$mybook->getlogistic_qnt()."<br/>";
+	echo "FK_genre:   ".$mybook->getFK_genre()."<br/>";
+	echo "creation_date:   ".$mybook->getcreation_date()."<br/>";
+	echo "modif_date:   ".$mybook->getmodif_date()."<br/>";
+	echo "deleted:   ".$mybook->getdeleted()."<br/>";
 	echo "OK, ça marche...<br/>";
+	
 ?>

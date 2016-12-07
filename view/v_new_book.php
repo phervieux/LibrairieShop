@@ -5,10 +5,15 @@
     <title>LibrairieShop</title>
   </head>
 <body>
+<?php
+// Before displaying the form, user authentication must be done:
+// If the user isn't admin, we show a message:
+
+?>
 <p>
 <h1>Add book to LibraryShop</h1>
 </p>
-<form action="new_book.php" method="post">
+<form action="../../controller/new_book.php" method="post">
 	<fieldset>
 	<table>
 		<tr>
@@ -123,7 +128,9 @@
 	</fieldset>
 	</fieldset>
 </form>
-<?php require_once ($_SERVER['DOCUMENT_ROOT'] . '../view/templates/footer.php'); ?>
+<?php 
+echo "variable document root: ".$_SERVER['DOCUMENT_ROOT']."<br/>";
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/templates/footer.php'); ?>
 </body>
 </html>
   
