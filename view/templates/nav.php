@@ -1,7 +1,15 @@
 <?php 
-if (!defined('INCLUDE_CHECK')) {
-    http_response_code(404); die;
-}
+    if (!defined('INCLUDE_CHECK')) {
+        http_response_code(404); die;
+    }
+
+    $nav_params = array('loginbtn'=>'Login/Enregistrer','loginlink'=>'login');
+    $conn_confirmation = '';
+    if(isset($_SESSION) && $_SESSION != null){
+        $nav_params['loginbtn'] = 'Logout';
+        $nav_params['loginlink'] = 'logout';
+        $conn_confirmation = '<p>Bonjour, '.$_SESSION['name'].'</p>';
+    }
 ?>
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default">
@@ -13,12 +21,13 @@ if (!defined('INCLUDE_CHECK')) {
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="" class="navbar-brand">Projet 151</a>
+			<a href="./books.php" class="navbar-brand">Projet 151</a>
+                        <?php echo $conn_confirmation; ?>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-        <li><a href="">Magasin</a></li>
-        <li><a href="">Login/Enregistrer</a></li>
+                            <li><a href="">Magasin</a></li>
+                            <li><a href="<?php echo './'.$nav_params['loginlink'].'.php'; ?>"><?php echo $nav_params['loginbtn']; ?></a></li>
 		</div><!--/.nav-collapse -->
 	</div>
 </nav>

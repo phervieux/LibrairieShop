@@ -9,7 +9,7 @@ if (!file_exists($accessPath)) {
 }
 
 //Establish the connection
-$odbc = new PDO('odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq='.$accessPath.';Uid=');
+$odbc = new PDO('odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq='.$accessPath.';Uid=;Pwd=;');
 
 //hide sensible information on PDO errors
 $odbc -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

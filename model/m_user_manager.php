@@ -36,21 +36,27 @@ class UserManager {
 
     //SELECT DB FUNCTION
 	public function select($username, $password) {
-		$output = array();
-		$q = $this -> _odbc -> prepare("SELECT * FROM user WHERE username = :username AND password = :password AND deleted != 1");
+            try {
+                $output = array();
+		$q = $this -> _odbc -> prepare("SELECT * FROM user WHERE username = :username AND password = :password AND deleted = 0");
 		$q -> bindValue(':username', $username);
                 $q -> bindValue(':password', $password);
                 $result = $q -> fetch(PDO::FETCH_ASSOC);
 		if ($q -> execute()) {
 			//execution successfull: return DB data
 			while ($result = $q -> fetch()) {
-				array_push($output, array($result['id'], $result['username'], $result['name'], $result['surname'], $result['email'], $result['right'], $result['deleted'], $result['password']));
-			}
+                            //array_push($output, array($result['id'], $result['username'], $result['name'], $result['surname'], $result['email'], $result['right'], $result['deleted'], $result['password']));
+                            $output = $result;
+                            
+                        }
 			$return = $output;
 		} else
 			//execution failed: return FALSE
 			$return = FALSE;
 		return $return;
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+            }
 	}
 
     //SOFT DELETE ELEMENT FUNCTION
