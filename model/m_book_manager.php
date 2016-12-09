@@ -15,10 +15,10 @@ class BookManager {
 
     //INSERT DB FUNCTION
 	public function insert(Book $book) {
-		$q = $this -> _db -> prepare('INSERT INTO TABLE(id, title, overview, author_sex, author_name, author_fname, year, price, img_cover, edition, logistic_qnt, FK_genre, creation_date, modif_date, deleted)
-		    VALUES(:id, :title, :overview, :author_sex, :author_name, :author_fname, :year, :price, :img_cover, :edition, :logistic_qnt, :FK_genre, :creation_date, :modif_date, :deleted)');
-		$q -> bindValue(':id', $book -> getid());
-        $q -> bindValue(':title', $book -> gettitle());
+		$q = $this -> _db -> prepare('INSERT INTO t_book (title, overview, author_sex, author_name, author_fname, `year`, price, img_cover, edition, logistic_qnt, FK_genre, creation_date, modif_date, deleted)
+		    VALUES(:title, :overview, :author_sex, :author_name, :author_fname, :year, :price, :img_cover, :edition, :logistic_qnt, :FK_genre, :creation_date, :modif_date, :deleted)');
+        print_r($book);
+		$q -> bindValue(':title', $book -> gettitle());
         $q -> bindValue(':overview', $book -> getoverview());
         $q -> bindValue(':author_sex', $book -> getauthor_sex());
         $q -> bindValue(':author_name', $book -> getauthor_name());
