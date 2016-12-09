@@ -6,5 +6,5 @@
     session_destroy();
     
     
-    //header('Location: books.php');
+    header('Location: books.php');
  
