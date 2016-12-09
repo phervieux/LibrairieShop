@@ -1,10 +1,7 @@
 <?php
-/*
 if (!defined('INCLUDE_CHECK')) {
     http_response_code(404); die;
 }
- 
- */
 
 class Book {
     protected $_id;
