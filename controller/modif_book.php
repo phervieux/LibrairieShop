@@ -17,7 +17,7 @@
 	#
 	#################################################################
 	
-	////////////////////////////////// ----- Déclarations ----- //////////////////////////////////
+	//i//////////////////////////////// ----- Déclarations ----- //////////////////////////////////
 
 	//Security for views and models
     define('INCLUDE_CHECK', true);
@@ -33,7 +33,8 @@
 	$genreManager = new GenreManager();
 
 	//Get genres to create select in HTML
-	$genres = $genreManager -> select(null);
+	$bookinfos = $bookManager -> select_item($_GET['book']);
+	$genres = $genreManager -> select($bookinfos[11]);
 
 	//If form is submitted
 	if (isset($_POST['submit']) && $_POST['submit'] == 'Enregistrer'){
@@ -41,6 +42,7 @@
 		
 		// We can give it the $_POST array directly:
 		$mybook = new Book([]);
+		$mybook -> setid($_GET['book']);		
 		$mybook -> settitle($_POST['title']);
 		$mybook -> setoverview($_POST['overview']);
 		$mybook -> setauthor_sex($_POST['author_sex']);
@@ -53,31 +55,16 @@
 		$mybook -> setlogistic_qnt($_POST['logistic_qnt']);
 		$mybook -> setFK_genre($_POST['type']);
 		$mybook -> setdeleted(0);
-		$mybook -> setcreation_date(null);
 		$mybook -> setmodif_date(null);
 
-		//Record to the database
-		if ($bookManager -> insert($mybook) != FALSE){
+		//Modif in the database
+		if ($bookManager -> update($mybook) != FALSE){
 			$return_s =  'Formulaire enregistré correctement<br>';
+			$bookinfos = $bookManager -> select_item($_GET['book']);
+			$genres = $genreManager -> select($bookinfos[11]);
 		} else {
 			$return_f =  'Formulaire non enregistré<br>';
 		}
-
-		// Checks values before recording them in database:
-		echo "Titre :   ".$mybook->gettitle()."<br/>";
-		echo "overview:   ".$mybook->getoverview()."<br/>";
-		echo "author_sex:   ".$mybook->getauthor_sex()."<br/>";
-		echo "author_name:   ".$mybook->getauthor_name()."<br/>";
-		echo "author_fname:   ".$mybook->getauthor_fname()."<br/>";
-		echo "year:   ".$mybook->getyear()."<br/>";
-		echo "price:   ".$mybook->getprice()."<br/>";
-		echo "img_cover:   ".$mybook->getimg_cover()."<br/>";
-		echo "edition:   ".$mybook->getedition()."<br/>";
-		echo "logistic_qnt:   ".$mybook->getlogistic_qnt()."<br/>";
-		echo "FK_genre:   ".$mybook->getFK_genre()."<br/>";
-		echo "creation_date:   ".$mybook->getcreation_date()."<br/>";
-		echo "modif_date:   ".$mybook->getmodif_date()."<br/>";
-		echo "deleted:   ".$mybook->getdeleted()."<br/>";
 	}
 
 	//HTML dynamic meta data
@@ -86,6 +73,6 @@
 	//View construction
     require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/templates/head.php');
     require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/templates/nav.php');
-    require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/v_new_book.php');
+    require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/v_modif_book.php');
     require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/templates/scripts.php');
 ?>

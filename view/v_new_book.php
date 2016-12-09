@@ -7,6 +7,8 @@ if (!defined('INCLUDE_CHECK')) {
   <div class="row">
 		<form action="" method="POST" class="form-horizontal" role="form">
 			<div class="form-group">
+				<span class="text-danger"><?php if (isset($return_f)) echo $return_f; ?></span>
+				<span class="text-success"><?php if (isset($return_s)) echo $return_s; ?></span>
 				<label>Titre*</label>
 				<input class="form-control" required type="text" id="title" name="title"/>
 			</div>

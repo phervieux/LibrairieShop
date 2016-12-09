@@ -14,14 +14,18 @@ class GenreManager {
 	}
 
     //SELECT DB FUNCTION
-	public function select() {
+	public function select($myvalue) {
 		$output = null;
 		$q = $this -> _db -> prepare("SELECT id, name FROM t_genre WHERE deleted = 0");
 		$result = $q -> fetch(PDO::FETCH_ASSOC);
 		if ($q -> execute()) {
 			//execution successfull: return DB data
 			while ($result = $q -> fetch()) {
-				$output .= '<option value="'.$result['id'].'">'.$result['name'].'</option>';
+				if ($myvalue == $result['id']){
+					$output .= '<option selected value="'.$result['id'].'">'.$result['name'].'</option>';
+				} else{
+					$output .= '<option value="'.$result['id'].'">'.$result['name'].'</option>';
+				}
 			}
 			$return = $output;
 		} else
