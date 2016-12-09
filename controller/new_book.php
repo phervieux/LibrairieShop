@@ -9,7 +9,7 @@
 	#
 	# 	Date :		Decembre 2016
 	#	Version :		1.0
-	#	Révisions :		-
+	#	Révisions :		1.1 - David Miranda - TG-34
 	#
 	#################################################################
 	#
