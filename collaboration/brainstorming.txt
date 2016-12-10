@@ -3,3 +3,9 @@ On pourrait appliquer une sorte de masque pour passer d'un page à une autre:
   lien: https://github.com/blasten/turn.js
   
 realrael
+
+Tester la version finale de notre site avec la librairie JavaScript Gremlins.js
+  lien: https://github.com/marmelab/gremlins.js
+  retour/src: http://korben.info/faites-tester-votre-code-par-des-millions-de-petits-singes.html
+
+pherjung
