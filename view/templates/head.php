@@ -2,8 +2,9 @@
 if (!defined('INCLUDE_CHECK')) {
     http_response_code(404); die;
 }
-// 
-session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">

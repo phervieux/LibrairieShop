@@ -2,6 +2,7 @@
     //Security for views and models
     define('INCLUDE_CHECK', true);
     
+    session_start();
     if(isset($_SESSION) && $_SESSION != null){
         header('Location: books.php');
     }
@@ -13,7 +14,6 @@
     if (isset($_POST['username']) && isset($_POST['password'])){        
         $UserManager = new UserManager();
         $userData = $UserManager -> select($_POST['username'], $_POST['password']);
-        
         
         if(isset ($userData) && $userData != null){
             $User = new User($userData);

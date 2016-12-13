@@ -1,7 +1,8 @@
 <?php
     //Security for views and models
     define('INCLUDE_CHECK', true);
-
+    
+    
     //Processing
         //Models requirements
         require_once ($_SERVER['DOCUMENT_ROOT'] . '/model/m_book_manager.php');
