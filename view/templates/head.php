@@ -23,6 +23,9 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
       {
           vertical-align: middle;
       }
+      .bg-danger{
+          padding: 15px;
+      }
     </style>
   </head>
 <body>
