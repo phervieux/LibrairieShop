@@ -8,7 +8,8 @@ if (!defined('INCLUDE_CHECK')) {
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/3.1.3/footable.js"></script>
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
     <!-- Initialize FooTable -->
     <script>
         jQuery(function($){
