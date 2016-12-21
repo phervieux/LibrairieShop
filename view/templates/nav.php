@@ -3,7 +3,7 @@
         http_response_code(404); die;
     }
 
-    $nav_params = array('loginbtn'=>'Login/Enregistrer','loginlink'=>'login');
+    $nav_params = array('loginbtn'=>'Connexion','loginlink'=>'login');
     $conn_confirmation = '';
     if(isset($_SESSION) && $_SESSION != null){
         $nav_params['loginbtn'] = 'Logout';
