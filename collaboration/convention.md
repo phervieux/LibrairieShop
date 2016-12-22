@@ -19,5 +19,7 @@ Variable globale : MAJUSCULE
 ## Code
  - S'il y a une accolade, créez une ligne. Point barre.
  - Pas plus de 80 caractères par ligne, soit 12 mots environ. Nous tenons à la lisibilité.
+ - Ne pas laisser des espaces à la fin du ligne (trailing charcter en anglais)
+ - Un espace après la virgule
  - Si le fichier source contient uniquement du code PHP, ne pas utiliser de balise de fermeture, à savoir ?>.
    - https://secure.php.net/manual/fr/language.basic-syntax.phptags.php
