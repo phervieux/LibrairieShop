@@ -26,3 +26,6 @@ GRANT ALL ON projet151.* TO "projet151"@"localhost";
 Dans le cadre du cours, le serveur UwAmp est fourni par l'enseignant.
 Pour pouvoir interagir avec Access, il faut donc installer la bonne version d'Access Database Engine.
 Cliquez [ici](https://download.microsoft.com/download/2/4/3/24375141-E08D-4803-AB0E-10F2E3A07AAA/AccessDatabaseEngine.exe) pour l'installer.
+Si vous voulez simplement manipuler la base de donnée sans passer par Access et Windows, installez et configurez mdbtools.
+Suivez cette [documentation](https://gist.github.com/amirkdv/9672857) pour s'en sortir.
+Par contre, je n'ai pas réussi d'interagir avec le format .accdb en utilisant PDO.
