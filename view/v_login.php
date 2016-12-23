@@ -15,14 +15,10 @@ if (!defined('INCLUDE_CHECK')) {
                 <label for="exampleInputPassword1">Mot de passe</label>
                 <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe"/>
             </div>
-            <div class="form-group">
-                <?php echo $captcha; ?>
-                <input name="captcha" type="text" class="form-control" id="exampleInputPassword1" placeholder="Captcha"/>
-            </div>
-            <input type="submit" name="submit" value="submit" class="btn btn-default"/>
+            <input type="submit" name="submit" value="Continuer" class="btn btn-default"/>
         </form>
         <div class="imgnew">
-            <a href="./sign-up">
+            <a href="./sign_up.php">
                 <img src="./images/home/new.png" alt="new" title="New?" /> 
             </a>
         </div>
