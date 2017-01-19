@@ -29,7 +29,7 @@
                     <td>CHF $price</td>
                     <td>$book[9]</td>
                     <td>$book[10] unités en stock</td>
-                    <td><a href=\"add_to_cart?book=$book[0]\"><i class=\"fa fa-shopping-cart\"></i></a></td>
+                    <td><a href=\"./cart.php?action=0&id=$book[0]\"><i class=\"fa fa-shopping-cart\"></i></a></td>
                 </tr>\n\r";
             }
         } else
@@ -45,6 +45,19 @@
 
     //HTML dynamic meta data
     $__title = 'Livres';
+    
+    //  Request for cart products
+    session_start();
+    
+    //  transforme $_SESSION['cart'] en tableau s'il existe
+    if(isset($_SESSION['cart'])){
+        $cart = unserialize($_SESSION['cart']);
+    }
+    
+    //  Selectionne les données du panier dans la base de données
+    if(isset($cart[0])){
+        $cartBookList = $BookManager->select_items($cart);
+    }
     
     //View construction
     require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/templates/head.php');

@@ -1,9 +1,29 @@
 <?php
-    //Security for views and models
+	////////////////////////////////// ---------- Entête du programme ---------- //////////////////////////////////
+	#################################################################
+	#
+	#	Programme:          LibraryShop
+	#	Auteur:             Miguel Jalube
+	#
+	#################################################################
+	#
+	# 	Date :              Decembre 2016
+	#	Version :           1.0
+	#	Révisions :		
+	#
+	#################################################################
+	#
+	#	Get administration adding book informations
+	#
+	#################################################################
+	
+	////////////////////////////////// ----- Déclarations ----- //////////////////////////////////
+
+//Security for views and models
     define('INCLUDE_CHECK', true);
     
     session_start();
-    if(isset($_SESSION) && $_SESSION != null){
+    if(isset($_SESSION['user']) && $_SESSION['user'] != null){
         header('Location: books.php');
     }
     
