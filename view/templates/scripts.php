@@ -15,6 +15,26 @@ if (!defined('INCLUDE_CHECK')) {
         jQuery(function($){
             $('.table').footable();
         });
+        function add (id){
+            $('#cart').load('cart.php?action=0&id='+id, function() {
+                
+            });
+        }
+        function remove (id){
+            $('#cart').load('cart.php?action=1&id='+id, function() {
+                
+            });
+        }
+        function increase (id){
+            $('#cart').load('cart.php?action=2&id='+id, function() {
+                
+            });
+        }
+        function decrease (id){
+            $('#cart').load('cart.php?action=3&id='+id, function() {
+                
+            });
+        }
     </script>
   </body>
 </html>

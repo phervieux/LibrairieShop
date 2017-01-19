@@ -5,7 +5,7 @@
 
     $nav_params = array('loginbtn'=>'Connexion','loginlink'=>'login');
     $conn_confirmation = '';
-    if(isset($_SESSION) && $_SESSION != null){
+    if(isset($_SESSION['id']) && $_SESSION['id'] != null){
         $nav_params['loginbtn'] = 'Déconnexion';
         $nav_params['loginlink'] = 'logout';
         $conn_confirmation = '<p>Bonjour, '.$_SESSION['name'].'</p>';
