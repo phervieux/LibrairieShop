@@ -19,7 +19,7 @@
                 else 
                     $price = $book[7].'.-';
 
-                $HTMLlayout .= "<tr>
+                /*$HTMLlayout .= "<tr>
                     <td><img src=\"https://github.com/epsic151/LibrairieShop/blob/master/view/dist/theme/img/book.jpeg?raw=true\" style=\"max-width: 180px;\" /></td>
                     <td>$book[1]</td>
                     <td>$book[11]</td>
@@ -30,6 +30,19 @@
                     <td>$book[9]</td>
                     <td>$book[10] unités en stock</td>
                     <td><a href=\"./cart.php?action=0&id=$book[0]\"><i class=\"fa fa-shopping-cart\"></i></a></td>
+                </tr>\n\r";*/
+                
+                $HTMLlayout .= "<tr>
+                    <td><img src=\"https://github.com/epsic151/LibrairieShop/blob/master/view/dist/theme/img/book.jpeg?raw=true\" style=\"max-width: 180px;\" /></td>
+                    <td>$book[1]</td>
+                    <td>$book[11]</td>
+                    <td>$book[2]</td>
+                    <td>$book[6]</td>
+                    <td>$book[5] $book[4]</td>
+                    <td>CHF $price</td>
+                    <td>$book[9]</td>
+                    <td>$book[10] unités en stock</td>
+                    <td><button onclick=\"add(".$book[0].")\"><i class=\"fa fa-shopping-cart\"></i></button></td>
                 </tr>\n\r";
             }
         } else

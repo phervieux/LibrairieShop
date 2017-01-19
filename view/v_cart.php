@@ -3,7 +3,7 @@ if (!defined('INCLUDE_CHECK')) {
     http_response_code(404); die;
 }
 //  Définition de l'affichage du panier
-    $output =  '<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    $output =  '<div id="cart" class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                     <div class="list-group">
                         <span class="list-group-item active"><h3>Mon panier</h3></span>';
 
@@ -26,9 +26,9 @@ if (!defined('INCLUDE_CHECK')) {
                       '.$value['title'].'<br><i>Quantité: '.$amount.'</i><br>
                       <b class="pull-left">CHF '.$price.'</b><br>
                       <span class="pull-right">
-                      <a href="./cart.php?action=1&id='.$value['id'].'"><i class="fa fa-trash-o"></i></a>
-                      <a href="./cart.php?action=2&id='.$value['id'].'"><i class="fa fa-plus"></i></a>
-                      <a href="./cart.php?action=3&id='.$value['id'].'"><i class="fa fa-minus"></i></a>
+                      <button onclick="remove('.$value['id'].')"><i class="fa fa-trash-o"></i></button>
+                      <button onclick="increase('.$value['id'].')"><i class="fa fa-plus"></i></button>
+                      <button onclick="decrease('.$value['id'].')"><i class="fa fa-minus"></i></button>
                       </span><br>
                   </span>';
 

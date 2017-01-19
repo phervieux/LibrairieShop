@@ -21,7 +21,9 @@
 
 //Security for views and models
     define('INCLUDE_CHECK', true);
-
+    
+    
+    
     session_start();
     
     // Recuperation de l'ID
@@ -54,10 +56,6 @@
         if($updated == 0){
             $cart[] = array('id' => $id, 'amount' => 1);
         }
-        
-        echo '<pre style="background:lightblue;">';
-        print_r($cart);
-        echo '</pre>';
 
 //  Enlever du panier
     }elseif($action == 1){
@@ -74,10 +72,6 @@
             array_splice($cart, $key, 1);
         }
         
-        echo '<pre style="background:lightred;">';
-        print_r($cart);
-        echo '</pre>';
-        
 //  Incrémenter la quantité
     }elseif($action == 2){
         if(isset($_SESSION['cart'])){
@@ -91,10 +85,6 @@
                 $cart[$key]['amount']++;
             }
         }
-        
-        echo '<pre style="background:lightgreen;">';
-        print_r($cart);
-        echo '</pre>';
         
 //  Diminuer la quantité
     }elseif($action == 3){
@@ -114,10 +104,6 @@
             }
         }
         
-        echo '<pre style="background:lightgrey;">';
-        print_r($cart);
-        echo '</pre>';
-        
     }else{
         echo '<h1>Erreur 404</h1>';
     }
@@ -128,5 +114,82 @@
     }else{
         unset($_SESSION['cart']);
     }
-    header('Location: books.php');
+    
+//Géneration de la page résultat pour l'ajax
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//
+    //Models requirements
+        require_once ($_SERVER['DOCUMENT_ROOT'] . '/model/m_book_manager.php');
+        $BookManager = new BookManager();
+    
+    //  transforme $_SESSION['cart'] en tableau s'il existe
+    if(isset($_SESSION['cart'])){
+        $cart = unserialize($_SESSION['cart']);
+    }
+    
+    //  Selectionne les données du panier dans la base de données
+    if(isset($cart[0])){
+        $cartBookList = $BookManager->select_items($cart);
+    }
+    
+    //  Définition de l'affichage du panier
+    $output =  '<div class="list-group">
+                        <span class="list-group-item active"><h3>Mon panier</h3></span>';
+
+    if(isset($cartBookList)){
+        $total = array();
+        foreach($cartBookList as $key => $value){
+            
+//  Détermine la quantité d'un produit grâce à son id
+            foreach($cart as $v){
+                if($value['id'] === $v['id']){
+                    $amount = floatval($v['amount']);
+                    $id = $v['id'];
+                }
+            }
+
+//  Met le prix au type flotant et le format à deux chiffre après la virgule
+            $price = floatval($value['price']);
+            $price = number_format($price, 2);
+            $output .= '<span class="list-group-item">
+                      '.$value['title'].'<br><i>Quantité: '.$amount.'</i><br>
+                      <b class="pull-left">CHF '.$price.'</b><br>
+                      <span class="pull-right">
+                      <button onclick="remove('.$value['id'].')"><i class="fa fa-trash-o"></i></button>
+                      <button onclick="increase('.$value['id'].')"><i class="fa fa-plus"></i></button>
+                      <button onclick="decrease('.$value['id'].')"><i class="fa fa-minus"></i></button>
+                      </span><br>
+                  </span>';
+
+//  Additionne au prix total
+            $priceAmount = $amount * $price;
+            $total[] = $priceAmount;
+        }
+        
+//  Affiche le prix total
+        $output.= '      <span class="list-group-item">
+                    <strong>Total : CHF '.number_format(array_sum($total), 2).'</strong>
+                    </span>
+                    <span class="list-group-item">
+                        <button type="button" class="btn btn-primary"><i class="fa fa-trash-o"></i></button>
+                        <button type="button" class="btn btn-primary">Payer</button>
+                    </span>';
+
+//  Affiche panier vide
+    }else{
+        $output .=  '<span class="list-group-item">
+                        <strong>Panier vide</strong>
+                    </span>
+                    <span class="list-group-item">
+                    <strong>Total : CHF 00.00</strong>
+                    </span>
+                    <span class="list-group-item">
+                        <button type="button" class="btn btn-primary"><i class="fa fa-trash-o"></i></button>
+                        <button type="button" class="btn btn-primary">Payer</button>
+                    </span>';
+    }
+    $output.= '</div>';
+    echo $output;
+?>
     
