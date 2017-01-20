@@ -33,7 +33,7 @@
                 </tr>\n\r";*/
                 
                 $HTMLlayout .= "<tr>
-                    <td><img src=\"https://github.com/epsic151/LibrairieShop/blob/master/view/dist/theme/img/book.jpeg?raw=true\" style=\"max-width: 180px;\" /></td>
+                    <td><img src=\"$book[8]\" style=\"max-width: 180px;\" /></td>
                     <td>$book[1]</td>
                     <td>$book[11]</td>
                     <td>$book[2]</td>
