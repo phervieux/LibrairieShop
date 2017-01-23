@@ -11,6 +11,7 @@
         //Select all products from DB
         $books = $BookManager -> select();
         $HTMLlayout = null;
+        $HTMLlayout_admin = null;
         if (is_array($books)) {
             foreach ($books as $book) {
                 //Price processing add .- if cents are null
@@ -18,9 +19,10 @@
                     $price = $book[7];
                 else 
                     $price = $book[7].'.-';
-
-                /*$HTMLlayout .= "<tr>
-                    <td><img src=\"https://github.com/epsic151/LibrairieShop/blob/master/view/dist/theme/img/book.jpeg?raw=true\" style=\"max-width: 180px;\" /></td>
+              
+                //Layout for admin
+                $HTMLlayout_admin .= "<tr>
+                    <td><img src=\"$book[8]\" style=\"max-width: 180px;\" /></td>
                     <td>$book[1]</td>
                     <td>$book[11]</td>
                     <td>$book[2]</td>
@@ -29,9 +31,13 @@
                     <td>CHF $price</td>
                     <td>$book[9]</td>
                     <td>$book[10] unités en stock</td>
-                    <td><a href=\"./cart.php?action=0&id=$book[0]\"><i class=\"fa fa-shopping-cart\"></i></a></td>
-                </tr>\n\r";*/
-                
+                    <td>
+                        <button class=\"btn\" onclick=\"add(".$book[0].")\"><i class=\"fa fa-shopping-cart\"></i></button>
+                        <a href=\"modif_book.php?book=".$book[0]."\"><button class=\"admin-menu btn\"><i class=\"fa fa-edit\"></i></button></a>
+                    </td>
+                </tr>\n\r";
+
+                //Layout for clients
                 $HTMLlayout .= "<tr>
                     <td><img src=\"$book[8]\" style=\"max-width: 180px;\" /></td>
                     <td>$book[1]</td>
@@ -42,7 +48,9 @@
                     <td>CHF $price</td>
                     <td>$book[9]</td>
                     <td>$book[10] unités en stock</td>
-                    <td><button onclick=\"add(".$book[0].")\"><i class=\"fa fa-shopping-cart\"></i></button></td>
+                    <td>
+                        <button class=\"btn\" onclick=\"add(".$book[0].")\"><i class=\"fa fa-shopping-cart\"></i></button>
+                    </td>
                 </tr>\n\r";
             }
         } else
