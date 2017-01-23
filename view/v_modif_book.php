@@ -92,11 +92,3 @@ if (!defined('INCLUDE_CHECK')) {
 		</form>
 	</div>
 </div>
-
-<script>
-	$("#modif_book").validate({
-		rules: {
-			title: 'required'
-		}
-	});
-</script>

@@ -1,11 +1,15 @@
 .welcome-message {
-	color: green;
+	color: black;
 	font-weight: bold;
 }
 
 .admin-menu {
 	color: darkred;
-	font-weight: bold;
+	/*font-weight: bold;*/
+}
+
+.user-menu {
+	color: black;
 }
 
 .admin-book-img {

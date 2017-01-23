@@ -2,7 +2,6 @@
     //Security for views and models
     define('INCLUDE_CHECK', true);
     
-    
     //Processing
         //Models requirements
         require_once ($_SERVER['DOCUMENT_ROOT'] . '/model/m_book_manager.php');
@@ -34,6 +33,7 @@
                     <td>
                         <button class=\"btn\" onclick=\"add(".$book[0].")\"><i class=\"fa fa-shopping-cart\"></i></button>
                         <a href=\"modif_book.php?book=".$book[0]."\"><button class=\"admin-menu btn\"><i class=\"fa fa-edit\"></i></button></a>
+                        <a href=\"view_book.php?book=".$book[0]."\"><button class=\"user-menu btn\"><i class=\"fa fa-eye\"></i></button></a>
                     </td>
                 </tr>\n\r";
 
@@ -50,6 +50,7 @@
                     <td>$book[10] unités en stock</td>
                     <td>
                         <button class=\"btn\" onclick=\"add(".$book[0].")\"><i class=\"fa fa-shopping-cart\"></i></button>
+                        <a href=\"view_book.php?book=".$book[0]."\"><button class=\"user-menu btn\"><i class=\"fa fa-eye\"></i></button></a>
                     </td>
                 </tr>\n\r";
             }
@@ -57,12 +58,6 @@
             echo 'Une erreur est survenue avec la base de données!';
 
     //.end Processing
-    
-    //Open the session
-    //require_once ($_SERVER['DOCUMENT_ROOT'] . "/../_hroot/session.php");
-    
-    //Check if session is opened
-    //require_once ($_SERVER['DOCUMENT_ROOT'] . "/../_hroot/check_session.php");
 
     //HTML dynamic meta data
     $__title = 'Livres';

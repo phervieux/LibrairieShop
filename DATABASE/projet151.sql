@@ -50,3 +50,16 @@ CREATE TABLE t_order (
   deleted INT(1) NOT NULL DEFAULT 0 COMMENT '0=visible / 1=invisible',
   FOREIGN KEY (FK_book) REFERENCES t_book(id)
 ) ENGINE=InnoDB;
+
+# Structure of the table t_comment
+CREATE TABLE t_comment (
+  id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  comment text NOT NULL,
+  user INT(11) NOT NULL,
+  status INT(1) NOT NULL COMMENT '0=à valider, 1=validé',
+  FK_book INT(11) NOT NULL,
+  creation_date DATETIME NOT NULL DEFAULT NOW() COMMENT 'INSERT datetime',
+  validation_date DATETIME NOT NULL DEFAULT NOW() COMMENT 'VALIDATION datetime',
+  deleted INT(1) NOT NULL DEFAULT 0 COMMENT '0=visible / 1=invisible',
+  FOREIGN KEY (FK_book) REFERENCES t_book(id)
+) ENGINE=InnoDB;
