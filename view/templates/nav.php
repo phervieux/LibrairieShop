@@ -22,12 +22,13 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a href="./books.php" class="navbar-brand">Projet 151</a>
-                        <?php echo $conn_confirmation; ?>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-                            <li><a href="">Magasin</a></li>
-                            <li><a href="<?php echo './'.$nav_params['loginlink'].'.php'; ?>"><?php echo $nav_params['loginbtn']; ?></a></li>
+				<li><a><span class="welcome-message"><?php echo $conn_confirmation; ?></span></a></li>
+				<li><a href="">Magasin</a></li>
+				<li><a href="<?php echo './'.$nav_params['loginlink'].'.php'; ?>"><?php echo $nav_params['loginbtn']; ?></a></li>
+			</ul>
 		</div><!--/.nav-collapse -->
 	</div>
 </nav>
