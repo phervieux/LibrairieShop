@@ -9,6 +9,11 @@ $.validate({
 	form : '#new_book'
 });
 
+$.validate({
+	lang: 'fr',
+	form : '#new_comment'
+});
+
 $( document ).ready(function() {
 });
 

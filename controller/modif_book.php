@@ -32,7 +32,7 @@
 	$bookManager = new BookManager();
 	$genreManager = new GenreManager();
 
-	//Get genres to create select in HTML
+	//Get genres to create select in HTML + Book infos
 	$bookinfos = $bookManager -> select_item($_GET['book']);
 	$genres = $genreManager -> select($bookinfos[11]);
 

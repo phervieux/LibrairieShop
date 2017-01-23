@@ -51,7 +51,6 @@ $dis = null
 					<input class="" type="file" name="img_cover" id="img_cover">
 					<small>Veuilez insérer des images en PNG ou JPEG et avec une taille maximale de 1 MB</small>
 					<br>
-					
 					<img class="admin-book-img" src="../images/books/<?php echo $bookinfos[8]; ?>">
 				</div>
 				<div class="form-group">
@@ -92,4 +91,4 @@ $dis = null
 		</form>
 	</div>
 </div>
-  
+

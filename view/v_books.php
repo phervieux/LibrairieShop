@@ -34,10 +34,7 @@ if (!defined('INCLUDE_CHECK')) {
       </table>
     </div>
     
-    <?php
-        //  Panier
-        require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/v_cart.php');
-    ?>
-  </div>
-  <?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/templates/footer.php'); ?>
-</div>
+  <?php 
+  require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/v_cart.php');
+  require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/templates/footer.php'); 
+  ?>
