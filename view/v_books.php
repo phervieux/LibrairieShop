@@ -22,7 +22,14 @@ if (!defined('INCLUDE_CHECK')) {
           </tr>
         </thead>
         <tbody>
-          <?php echo $HTMLlayout; ?>
+          <?php
+            if (isset($_SESSION['right']) && $_SESSION['right'] == 1){
+              echo $HTMLlayout_admin;
+            } else {
+              echo $HTMLlayout;
+            }
+           
+          ?>
         </tbody>
       </table>
     </div>
