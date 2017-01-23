@@ -1,0 +1,11 @@
+.welcome-message {
+	color: green;
+	font-weight: bold;
+}
+
+.table tbody>tr>td {
+	vertical-align: middle;
+}
+.bg-danger {
+	padding: 15px;
+}
