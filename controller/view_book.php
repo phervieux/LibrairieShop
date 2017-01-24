@@ -43,23 +43,42 @@
             }
         } else
             $HTMLlayout = 'Aucun commentaire!';
-
+        
+        //  Captcha
+        $captchaimg = array(
+        '1'=>'83tsU',
+        '2'=>'viearer',
+        '3'=>'ZZECEL'
+        );
+        if(!isset($_POST['submit'])){
+            $captcharnd = rand(1, 3);
+            $_SESSION['randnb'] = $captcharnd;
+        }
+        
 	//Form submit
 	if (isset($_POST['submit']) && ($_POST['submit'] == 'Soumettre')){
-		$comment = new Comment([]);
-		$comment -> setuser($_SESSION['id']);
-		$comment -> setcomment($_POST['comment']);
-		$comment -> setstatus(0);
-		$comment -> setFK_book($_GET['book']);
-		$comment -> setcreation_date(null);
-		$comment -> setdeleted(0);
-		//Record to the database
-		if ($insertedid = $commentManager -> insert($comment) != FALSE){
-			$return_s =  'Commentaire enregistré. La validation est en cours!<br>';
-		} else {
-			$return_f =  'Commentaire non enregistré<br>';
-		}
+                if(isset($_POST['captcha']) && $_POST['captcha'] == $captchaimg[$_SESSION['randnb']]){
+                    $comment = new Comment([]);
+                    $comment -> setuser($_SESSION['id']);
+                    $comment -> setcomment($_POST['comment']);
+                    $comment -> setstatus(0);
+                    $comment -> setFK_book($_GET['book']);
+                    $comment -> setcreation_date(null);
+                    $comment -> setdeleted(0);
+                    //Record to the database
+                    if ($insertedid = $commentManager -> insert($comment) != FALSE){
+                            $return_s =  'Commentaire enregistré. La validation est en cours!<br>';
+                    } else {
+                            $return_f =  'Commentaire non enregistré<br>';
+                    }
+                }else{
+                    $return_f =  'Captcha incorrect<br>';
+                }
+                $captcharnd = rand(1, 3);
+                $_SESSION['randnb'] = $captcharnd;
 	}
+        
+        $captcha = '<img alt="captcha" src="../images/captcha/captcha'.$captcharnd.'.png"/>';
     
     //View construction
     require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/templates/head.php');

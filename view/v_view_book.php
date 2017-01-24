@@ -40,9 +40,14 @@ else
 						<span class="text-danger"><?php if (isset($return_f)) {echo $return_f;} ?></span>
 						<span class="text-success"><?php if (isset($return_s)) {echo $return_s;} ?></span>
 					</div>
+                                        <div class="form-group">
+                                            <?php echo $captcha; ?>
+                                            <input name="captcha" type="text" class="form-control" id="exampleInputPassword1" placeholder="Captcha"/>
+                                        </div>
 					<div class="form-group">
 						<button type="submit" name="submit" value="Soumettre" class="btn btn-primary">Soumettre</button>
 					</div>
+                                        
 				</form>
 		</div>
     
