@@ -29,9 +29,9 @@ else
 				<b>Genre: </b> <span><?php echo htmlentities($bookinfos[11]); ?></span><br>
 				<b>Quantité en stock: </b> <span><?php echo htmlentities($bookinfos[10]); ?></span><br>
 				<hr>
-				<?php if (isset($_SESSION['id'])) { ?>
 				<h3>Commentaires</h3>
 				<?php echo $HTMLlayout; ?>
+				<?php if (isset($_SESSION['id'])) { ?>
 				<hr>
 				<form method="POST" class="form-vertical" id="new_comment">
 					<div class="form-group">
