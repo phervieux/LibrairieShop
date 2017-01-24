@@ -10,10 +10,12 @@
 	require_once $_SERVER['DOCUMENT_ROOT']."/model/m_genre_manager.php";
 	require_once $_SERVER['DOCUMENT_ROOT']."/model/m_comment.php";
 	require_once $_SERVER['DOCUMENT_ROOT']."/model/m_comment_manager.php";
+	require_once $_SERVER['DOCUMENT_ROOT']."/model/m_user_manager.php";
 	//Init BookManager
 	$bookManager = new BookManager();
 	$genreManager = new GenreManager();
 	$commentManager = new CommentManager();
+	$userManager = new UserManager();
 
 	 //  transforme $_SESSION['cart'] en tableau s'il existe
     if(isset($_SESSION['cart'])){
@@ -38,8 +40,17 @@
         if (!empty($comments)) {
             foreach ($comments as $comment) {
                 //Layout
-                $HTMLlayout .= "<pre>$comment[1]</pre>
-				<small></small>\n\r";
+				//Get username with id
+				$comment[2] = $userManager -> select_uname($comment[2]);
+
+				//Dates format
+				$comment[3] = new DateTime($comment[3]); 
+				$comment[3] = $comment[3] -> format('d.m.Y à H:i:s');
+
+                $HTMLlayout .= "<div class=\"panel panel-default\">
+				<div class=\"panel-body\">".nl2br(htmlentities($comment[1]))."</div>
+				<div class=\"panel-footer\"><small>Ecrit le <b>".$comment[3]."</b> par <b>".$comment[2]."</b> </small></div>
+				</div>\n\r";
             }
         } else
             $HTMLlayout = 'Aucun commentaire!';
