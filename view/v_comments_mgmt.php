@@ -16,6 +16,7 @@ if (!defined('INCLUDE_CHECK')) {
 				<th data-type="html" data-breakpoints="all">Commentaire</th>
 				<th>Utilisateur</th>
 				<th>Publié le</th>
+				<th data-breakpoints="all">Validé / Refusé le</th>
 				<th>Etat</th>
 				<th data-type="html">Livre </th>
 				<th data-type="html"> </th>
