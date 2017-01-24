@@ -15,7 +15,7 @@ else
 				<h1><?php echo htmlentities($bookinfos[1]); ?></h1>
 				<h3>CHF <?php echo $price; ?></h3>
 				<?php echo "<button class=\"btn\" onclick=\"add(".$bookinfos[0].")\"><i class=\"fa fa-shopping-cart\"></i> Ajouter au panier</button>"; ?>
-				<?php if ($_SESSION['right'] == 1) {echo "<a href=\"modif_book.php?book=".$bookinfos[0]."\"><button class=\"admin-menu btn\"><i class=\"fa fa-edit\"></i> Modifier</button></a>";} ?>
+				<?php if (isset($_SESSION['right']) && $_SESSION['right'] == 1) {echo "<a href=\"modif_book.php?book=".$bookinfos[0]."\"><button class=\"admin-menu btn\"><i class=\"fa fa-edit\"></i> Modifier</button></a>";} ?>
 				<hr>
 				<h3>Auteur</h3>
 				<?php if($bookinfos[3] == 'M'){$bookinfos[3] = 'Monsieur';} else {$bookinfos[3] = 'Madame';}?>
@@ -29,6 +29,7 @@ else
 				<b>Genre: </b> <span><?php echo htmlentities($bookinfos[11]); ?></span><br>
 				<b>Quantité en stock: </b> <span><?php echo htmlentities($bookinfos[10]); ?></span><br>
 				<hr>
+				<?php if (isset($_SESSION['id'])) { ?>
 				<h3>Commentaires</h3>
 				<?php echo $HTMLlayout; ?>
 				<hr>
@@ -40,17 +41,18 @@ else
 						<span class="text-danger"><?php if (isset($return_f)) {echo $return_f;} ?></span>
 						<span class="text-success"><?php if (isset($return_s)) {echo $return_s;} ?></span>
 					</div>
-                                        <div class="form-group">
-                                            <?php echo $captcha; ?>
-                                            <input name="captcha" type="text" class="form-control" id="exampleInputPassword1" placeholder="Captcha"/>
-                                        </div>
 					<div class="form-group">
-						<button type="submit" name="submit" value="Soumettre" class="btn btn-primary">Soumettre</button>
+						<div class="col-xs-6"><?php echo $captcha; ?></div>
+						<div class="col-xs-6">
+							<input name="captcha" type="text" class="form-control" id="exampleInputPassword1" placeholder="Captcha"/>
+							<button type="submit" name="submit" value="Soumettre" class="btn btn-primary">Soumettre</button>
+							<br><br><br>
+						</div>
 					</div>
-                                        
 				</form>
+				<?php } ?>
 		</div>
-    
+		
   <?php 
   require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/v_cart.php');
   require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/templates/footer.php'); 

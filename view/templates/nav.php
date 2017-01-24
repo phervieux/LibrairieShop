@@ -27,9 +27,12 @@
 			<ul class="nav navbar-nav">
 				<li><a><span class="welcome-message"><?php echo htmlentities($conn_confirmation); ?></span></a></li>
 				<li><a href="books.php">Magasin</a></li>
-				<li><a href="my_comments.php">Mes commentaires</a></li>
-				
 				<?php 
+					//Nav bar for logged in user
+					if (isset($_SESSION['id'])){
+						echo '<li><a href="my_comments.php">Mes commentaires</a></li>';
+					}
+
 					//Nav bar for admin
 					if (isset($_SESSION['right']) && $_SESSION['right'] == 1){
 						echo '<li class="dropdown">';
