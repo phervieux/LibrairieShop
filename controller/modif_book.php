@@ -19,9 +19,13 @@
 	
 	//i//////////////////////////////// ----- Déclarations ----- //////////////////////////////////
 
+	//Security check - Logged in 
+	require_once $_SERVER['DOCUMENT_ROOT']."/security_checks/check_session.php";
+	//Security check - Admin 
+	require_once $_SERVER['DOCUMENT_ROOT']."/security_checks/check_admin.php";
+
 	//Security for views and models
     define('INCLUDE_CHECK', true);
-	
 	
 	// Include file containing class Book
 	require_once $_SERVER['DOCUMENT_ROOT']."/model/m_book.php";
@@ -112,7 +116,7 @@
 			$mybook -> setlogistic_qnt($_POST['logistic_qnt']);
 			$mybook -> setFK_genre($_POST['type']);
 			$mybook -> setdeleted($del);
-			$mybook -> setmodif_date(null);
+			$mybook -> setmodif_date(date('Y-m-d H:i:s'));
 
 			//Modif in the database
 			if ($bookManager -> update($mybook) != FALSE){

@@ -8,7 +8,7 @@
     if(isset($_SESSION['id']) && $_SESSION['id'] != null){
         $nav_params['loginbtn'] = 'Déconnexion';
         $nav_params['loginlink'] = 'logout';
-        $conn_confirmation = '<p>Bonjour, '.$_SESSION['name'].'</p>';
+        $conn_confirmation = 'Bonjour, '.$_SESSION['name'];
     }
 ?>
 <!-- Fixed navbar -->
@@ -25,13 +25,20 @@
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li><a><span class="welcome-message"><?php echo $conn_confirmation; ?></span></a></li>
+				<li><a><span class="welcome-message"><?php echo htmlentities($conn_confirmation); ?></span></a></li>
 				<li><a href="books.php">Magasin</a></li>
+				<li><a href="my_comments.php">Mes commentaires</a></li>
 				
 				<?php 
 					//Nav bar for admin
 					if (isset($_SESSION['right']) && $_SESSION['right'] == 1){
+						echo '<li class="dropdown">';
+						echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="admin-menu">Administration</span> <span class="caret"></span></a>';
+						echo '<ul class="dropdown-menu">';
 						echo '<li><a href="new_book.php"><span class="admin-menu">Ajouter un livre</span></a></li>';
+						echo '<li><a href="comments_mgmt.php"><span class="admin-menu">Commentaires</span></a></li>';
+						echo '</ul>';
+						echo '</li>';
 					}
 				?>
 				<li><a href="<?php echo './'.$nav_params['loginlink'].'.php'; ?>"><?php echo $nav_params['loginbtn']; ?></a></li>

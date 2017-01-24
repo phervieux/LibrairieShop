@@ -12,22 +12,22 @@ else
   <div class="row row-offcanvas row-offcanvas-right">
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
       	<img class="admin-book-img" src="../images/books/<?php echo $bookinfos[8]; ?>"><br>
-				<h1><?php echo $bookinfos[1]; ?></h1>
+				<h1><?php echo htmlentities($bookinfos[1]); ?></h1>
 				<h3>CHF <?php echo $price; ?></h3>
 				<?php echo "<button class=\"btn\" onclick=\"add(".$bookinfos[0].")\"><i class=\"fa fa-shopping-cart\"></i> Ajouter au panier</button>"; ?>
 				<?php if ($_SESSION['right'] == 1) {echo "<a href=\"modif_book.php?book=".$bookinfos[0]."\"><button class=\"admin-menu btn\"><i class=\"fa fa-edit\"></i> Modifier</button></a>";} ?>
 				<hr>
 				<h3>Auteur</h3>
 				<?php if($bookinfos[3] == 'M'){$bookinfos[3] = 'Monsieur';} else {$bookinfos[3] = 'Madame';}?>
-				<span><?php echo $bookinfos[3].' '.$bookinfos[5].' '.$bookinfos[4]; ?></span>
+				<span><?php echo htmlentities($bookinfos[3]).' '.htmlentities($bookinfos[5]).' '.htmlentities($bookinfos[4]); ?></span>
 				<hr>
 				<b>Resumé: </b><br>
-				<pre><?php echo $bookinfos[2]; ?></pre>
+				<div class="panel panel-default"><div class="panel-body"><?php echo nl2br(htmlentities($bookinfos[2])); ?></div></div>
 				<hr>
-				<b>Edition: </b> <span><?php echo $bookinfos[9]; ?></span><br>
-				<b>Année d'édition: </b> <span><?php echo $bookinfos[6]; ?></span><br>
-				<b>Genre: </b> <span><?php echo $bookinfos[11]; ?></span><br>
-				<b>Quantité en stock: </b> <span><?php echo $bookinfos[10]; ?></span><br>
+				<b>Edition: </b> <span><?php echo htmlentities($bookinfos[9]); ?></span><br>
+				<b>Année d'édition: </b> <span><?php echo htmlentities($bookinfos[6]); ?></span><br>
+				<b>Genre: </b> <span><?php echo htmlentities($bookinfos[11]); ?></span><br>
+				<b>Quantité en stock: </b> <span><?php echo htmlentities($bookinfos[10]); ?></span><br>
 				<hr>
 				<h3>Commentaires</h3>
 				<?php echo $HTMLlayout; ?>
