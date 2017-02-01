@@ -133,6 +133,22 @@ class BookManager {
                 
 		return $return;
 	}
+        
+// Pour soustraire du stock
+        public function stock_remove($id, $amount) {
+		//update table deleted attr.
+		$q = $this -> _db -> prepare('UPDATE t_book SET logistic_qnt = :logistic_qnt WHERE id=:id AND deleted = 0');
+		$q -> bindValue(':id', $id);
+                $q -> bindValue(':logistic_qnt', $amount);
+                if ($q -> execute()) {
+            //execution successfull: return TRUE
+			$return = TRUE;
+		} else {
+            //execution failed: return FALSE
+			$return = FALSE;
+		}
+		return $return;
+	}
 
     //setDB
 	public function setDb(PDO $db) {

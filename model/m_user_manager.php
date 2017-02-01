@@ -60,7 +60,7 @@ class UserManager {
 	}
 
     //SELECT USERNAME WITH ID - DB FUNCTION
-	public function select_uname($uid) {
+    public function select_uname($uid) {
 		$q = $this -> _odbc -> prepare("SELECT username FROM user WHERE id = :uid AND deleted = 0");
         $q -> bindValue(':uid', $uid);		
 		$result = $q -> fetch(PDO::FETCH_ASSOC);
@@ -72,6 +72,20 @@ class UserManager {
 			//execution failed: return FALSE
 			$return = FALSE;
 		return $return;
+    }
+    
+    public function select_by_id($id) {
+        $q = $this -> _odbc -> prepare('SELECT * FROM user WHERE id = :id AND deleted = 0');
+        $q -> bindValue(':id', $id);		
+        $result = $q -> fetch(PDO::FETCH_ASSOC);
+        if ($q -> execute()) {
+                //execution successfull: return DB data
+                $result = $q -> fetchAll();
+                $return = $result[0];
+        } else
+                //execution failed: return FALSE
+                $return = FALSE;
+        return $return;
     }
 
     //SOFT DELETE ELEMENT FUNCTION
