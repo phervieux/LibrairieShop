@@ -32,6 +32,7 @@
     
     $error = 0;
     $msg = '';
+    $__title = 'Login';
     
     $captchaimg = array(
         '1'=>'83tsU',
@@ -43,6 +44,12 @@
         setcookie('randnb',$captcharnd);
     }
     
+//  Set the redirection location after login
+    if(isset($_GET['order']) && $_GET['order']){
+        $location = 'Location: checkout.php';
+    }else{
+        $location = 'Location: books.php';
+    }
     
     if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['submit'])){        
         if($_POST['captcha'] == $captchaimg[$_COOKIE['randnb']]){
@@ -59,8 +66,11 @@
                 $_SESSION['surname'] = $User ->getsurname();
                 $_SESSION['email'] = $User ->getemail();
                 $_SESSION['right'] = $User ->getright();
+                $_SESSION['adress'] = $User ->getadress();
+                $_SESSION['npa'] = $User ->getnpa();
+                $_SESSION['city'] = $User ->getcity();
 
-                header('Location: books.php');
+                header($location);
             }else{
                 $error = 2;
             }

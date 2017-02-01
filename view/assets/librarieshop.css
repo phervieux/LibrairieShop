@@ -24,3 +24,12 @@
 .bg-danger {
 	padding: 15px;
 }
+
+.tableImportant{
+        background: #337ab7;
+        color : #fff;
+}
+
+.priceColumn{
+        text-align: right;
+}
