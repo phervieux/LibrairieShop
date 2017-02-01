@@ -51,17 +51,14 @@ class OrderManager {
     //SELECT DB FUNCTION
 	public function select() {
 		$output = array();
-		$q = $this -> _db -> prepare("SELECT o.id as oid, o.order_date as oorder_date, o.user as ouser, o.qnt as oqnt, o.status as ostatus, o.total_price as ototal_price, o.FK_book as oFK_book, o.deleted as odeleted, u.name as uname, u.username as uusername, u.adress as uadresse, u.npa as unpa, u.city as ucity, u.email as uemail
-                                              FROM t_order as o
-                                              INNER JOIN t_user as u on o.user = u.id
-                                              WHERE o.deleted = 0");
+		$q = $this -> _db -> prepare("SELECT *
+                                              FROM t_order
+                                              WHERE deleted = 0");
 		$result = $q -> fetch(PDO::FETCH_ASSOC);
 		if ($q -> execute()) {
 			//execution successfull: return DB data
-			while ($result = $q -> fetch()) {
-				array_push($output, array($result['oid'], $result['oorder_date'], $result['ouser'], $result['oqnt'], $result['ostatus'], $result['ototal_price'], $result['oFK_book'], $result['odeleted'], $result['uname'], $result['uusername'], $result['uadress'], $result['unpa'], $result['ucity'], $result['uemail']));
-			}
-			$return = $output;
+                        $result = $q -> fetchAll();
+			$return = $result;
 		} else
 			//execution failed: return FALSE
 			$return = FALSE;
