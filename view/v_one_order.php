@@ -1,6 +1,7 @@
 <?php
-
-if($_SESSION['right'] == 1){
+$action = 'Details de';
+if($_SESSION['right'] == 1 && $_GET['action'] == 'edit'){
+    $action = 'Modifier';
     $select = '<select onchange="this.form.submit()" name="status" class="form-control">';
     foreach($status as $key => $value){
         if($order['status'] == $key){
@@ -15,7 +16,7 @@ if($_SESSION['right'] == 1){
     $select = $status[$order['status']];
 }    
     $output =  '<div id="cart" class="center col-xs-12 col-sm-12 col-md-offset-1 col-lg-offset-1 col-md-10 col-lg-10">'
-               . '<div class="list-group"><div><h2>Modifier la commande N° '.$order['id'].'</h2></div>';
+               . '<div class="list-group"><div><h2>'.$action.' la commande N° '.$order['id'].'</h2></div>';
     //  Informations
     $output.= '<div clas="col-xs-12 col-sm-12 col-md-4 col-lg-4">'
                 . '<p><strong>Adresse de livraison :</strong></p>'
