@@ -38,11 +38,11 @@
     $OrderManager = new OrderManager();
     
 //  Status 0 = new / 1 = en cours / 2 = livré  
-    $status = array('Validation', 'En cours de traitement', 'Cloturée');
+    $status = array('Nouvelle', 'Validée', 'Payée', 'Epediée', 'Cloturée');
     
     if(isset($_GET['by']) && isset($_GET['value']) && $_SESSION['right']==1){
         if($_GET['by'] == 'user' || $_GET['by'] == 'status' || $_GET['by'] == 'id'){
-            $method = 'select_by_'.$_GET['by'];
+            $method = 'select';
             $value = $_GET['value'];
             $by = $_GET['by'];
         }else{
