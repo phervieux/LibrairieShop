@@ -10,7 +10,7 @@ if (!defined('INCLUDE_CHECK')) {
     $output.= '<p><strong>Adresse de livraison :</strong></p><p>'.$_SESSION['name'].' '.strtoupper($_SESSION['surname']).'<br>'.$_SESSION['adress'].'<br>'.$_SESSION['npa'].' '.$_SESSION['city'].'</p>';
     $output.= '<p><strong>Date de livraison estimée :</strong></p><p>'.$date->format('d.m.Y').'</p></div>';
     if($stock == 0){
-        $output.= '<p class="alert">Attention nous n\'avons pas assez d\'articles en stock pour répondre à votre commande. La date de livraison risque d\'être plus longue que prévue</p>';
+        $output.= '<p class="alert alert-danger">Attention nous n\'avons pas assez d\'articles en stock pour répondre à votre commande. La date de livraison risque d\'être plus longue que prévue</p>';
     }
   
 //  Order

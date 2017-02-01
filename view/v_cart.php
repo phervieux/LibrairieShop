@@ -42,7 +42,7 @@ if (!defined('INCLUDE_CHECK')) {
                     <strong>Total : CHF '.number_format(array_sum($total), 2).'</strong>
                     </span>
                     <span class="list-group-item">
-                        <a type="button" class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
+                        <a class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
                         <a href="checkout.php" class="btn btn-primary">Payer</a>
                     </span>';
 
