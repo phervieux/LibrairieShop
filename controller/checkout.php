@@ -1,5 +1,25 @@
 <?php
-//  Security for views and models
+	////////////////////////////////// ---------- Entête du programme ---------- //////////////////////////////////
+	#################################################################
+	#
+	#	Programme:          LibraryShop
+	#	Auteur:             Miguel Jalube
+	#
+	#################################################################
+	#
+	# 	Date :              Decembre 2016
+	#	Version :           1.0
+	#	Révisions :		
+	#
+	#################################################################
+	#
+	#	Get administration adding book informations
+	#
+	#################################################################
+	
+	////////////////////////////////// ----- Déclarations ----- //////////////////////////////////
+
+//Security for views and models
     define('INCLUDE_CHECK', true);
     
     //  variables utiles
@@ -40,15 +60,15 @@
             $prices[] = $priceAmount;
             
             if($amount >= $value['logistic_qnt']){
-                $checkStock[$key] = 1;
-            }else{
                 $checkStock[$key] = 0;
+            }else{
+                $checkStock[$key] = 1;
             }
         }
         $stock = 1;
         
         foreach($checkStock as $key => $value){
-            if(!$checkStock){
+            if(!$value){
                 $stock = 0;
             }
         }
@@ -61,6 +81,8 @@
         
         $date->add(DateInterval::createFromDateString($interval));
         $total = number_format(array_sum($prices), 2);
+        
+        $__title = 'Validation de la commande';
         
 //  View construction
         require_once ($_SERVER['DOCUMENT_ROOT'] . '/view/templates/head.php');

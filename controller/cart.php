@@ -172,8 +172,8 @@
                     <strong>Total : CHF '.number_format(array_sum($total), 2).'</strong>
                     </span>
                     <span class="list-group-item">
-                        <button type="button" class="btn btn-primary"><i class="fa fa-trash-o"></i></button>
-                        <button type="button" class="btn btn-primary">Payer</button>
+                        <a class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
+                        <a href="checkout.php" class="btn btn-primary">Payer</a>
                     </span>';
 
 //  Affiche panier vide
@@ -184,10 +184,10 @@
                     <span class="list-group-item">
                     <strong>Total : CHF 00.00</strong>
                     </span>
-                    <span class="list-group-item">
-                        <button type="button" class="btn btn-primary"><i class="fa fa-trash-o"></i></button>
-                        <button type="button" class="btn btn-primary">Payer</button>
-                    </span>';
+                    <!--span class="list-group-item">
+                        <a class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
+                        <a href="checkout.php" class="btn btn-primary">Payer</a>
+                    </span-->';
     }
     $output.= '</div>';
     echo $output;
